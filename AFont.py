@@ -27,7 +27,7 @@ def tguh():
 
     elif choice.lower() == "help":
 
-        print("wait i didnt implement this yet :((")
+        print("This hasn't been implemented at the moment... :(")
 
     elif choice.lower() == "exit":
 
