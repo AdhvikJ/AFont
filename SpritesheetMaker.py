@@ -7,6 +7,7 @@
 def launch1():
 
     from PIL import Image, ImageDraw
+    import os
 
     print("_______________________________\n|                             |\n|  AFont Spritesheet Creator  |\n|                             |\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
     print("Made by Curious Adhvik\nv1.0\n")
@@ -34,12 +35,11 @@ def launch1():
             draw = ImageDraw.Draw(sheet)
 
             # === GRID SETTINGS ===
-            # === GRID SETTINGS ===
-            value_100 = max(0, min(100, float(input("Enter 0-100 (black-white) for how bright the grid lines should be: "))))
+            value_100 = max(0, min(100, float(input("Enter 0-100 (black-white) for how bright the grid lines should be.\nEnter: "))))
             color = int(round(value_100 * 2.55))
             grid_color = (color, color, color, 255)
 
-            choice2 = float(input("Enter how thick the lines should be (min: 0.1): "))
+            choice2 = float(input("Enter how thick the lines should be (min: 0.1)\nEnter: "))
             line_width = max(0.1, choice2)
             line_width_int = int(round(line_width))
 
@@ -55,10 +55,14 @@ def launch1():
             for r in range(rows + 1):
                 y = r * cell_h
                 draw.line([(0, y), (sheet_w, y)], fill=grid_color, width=line_width_int)
+            
+            folder = input("Since the spritesheet will be stored in a folder, what should the folder be called?\nEnter:")
+            os.makedirs(folder, exist_ok=True)
 
             output1 = f"{input("Alright, we made the spritesheet, and now you need to give it a name! What shall it be called?\nDo not type the suffix of the file.\nEnter: ")}.png"
             output = output1.replace(" ", "_")
-            sheet.save(output)
+            output2 = f"{folder}/{output}"
+            sheet.save(output2)
             if " " in output1:
                 print(f"Spritesheet template with grid saved as {output}\n(the spaces were replaced w/ underscores)")
             else:
