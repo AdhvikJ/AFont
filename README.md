@@ -38,3 +38,6 @@ and this code for Windows:
 ``` bash
 rmdir /s /q AFont
 ```
+# This README is unfinished.
+Sadly, I need more time to finish this. However, look at this video to see how to use this tool!\
+[ LINK HERE ]
