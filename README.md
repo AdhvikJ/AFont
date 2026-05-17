@@ -29,3 +29,12 @@ pip install -r requirements.txt
 ``` bash
 python AFont.py
 ```
+# Need to uninstall?
+Don't worry, run this code for Mac/Linux:
+``` bash
+rm -rf AFont
+```
+and this code for Windows:
+``` bash
+rmdir /s /q AFont
+```
